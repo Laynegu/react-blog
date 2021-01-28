@@ -1,0 +1,56 @@
+/* 列表内容部分 */
+.list-title {
+  font-size: .6rem;
+  color: #1e90ff;
+  padding: 0 .5rem;
+}
+
+.list-description {
+  font-size: .3rem;
+  color: #777;
+  padding: .3rem .5rem .5rem;
+}
+
+.list-keyWord {
+  overflow: hidden;
+  padding-left: .4rem;
+  margin-top: .1rem;
+}
+
+.list-keyWord li {
+  float: left;
+  padding: .01rem .2rem;
+  margin: .1rem;
+}
+
+.list-icon {
+  padding: .1rem .1rem;
+  color :#AAA;
+}
+
+.list-icon span {
+  display: inline-block;
+  padding: 0 .2rem;
+}
+
+.list-icon .calendar {
+  color: #19e9ab;
+}
+
+.list-icon .tags {
+  color: #fa9c21;
+}
+
+.list-icon .fire {
+  color: #f52988;
+}
+
+.list-img {
+  width: 100%;
+  padding: 0 .2rem 1rem;
+}
+
+.list-img img {
+  width: 100%;
+  height: auto;
+}

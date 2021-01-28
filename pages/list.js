@@ -5,7 +5,7 @@ import Main from '../components/Main';
 export default function Home() {
   return (
     <div>
-      <Title titleName={"Home"} />
+      <Title titleName={"List"} />
       <Header />
       <Main></Main>
     </div>
