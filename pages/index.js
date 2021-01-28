@@ -1,14 +1,13 @@
-import Head from 'next/head'
-import Header from '../components/Header'
+import Title from '../components/Title';
+import Header from '../components/Header';
+import Main from '../components/Main';
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Home</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header></Header>
+      <Title titleName={"home"} />
+      <Header />
+      <Main></Main>
     </div>
   )
 }

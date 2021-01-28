@@ -1,7 +1,10 @@
+/* 导航栏 */
 .header-nav {
   position: fixed;
+  left: 0;
+  top: 0;
   width: 100%;
-  box-shadow: 0 0 .06rem .02rem #cccccca9;
+  box-shadow: 0 0 .3rem .02rem #cccccca9;
   background-color: rgba(255, 255, 255, .8);
   z-index: 1;
 }
@@ -11,12 +14,15 @@
   font-size: .32rem;
   font-weight: 500;
   background: none;
+  height: .8rem;
+  line-height: .8rem;
 }
 
 .header-icon {
   font-size: .32rem !important;
 }
 
+/* 背景图 */
 .header-banner {
   position: relative;
   z-index: 0;
@@ -35,7 +41,7 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.3);
 }
 
 .header-banner-info {
