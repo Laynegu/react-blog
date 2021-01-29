@@ -1,4 +1,4 @@
-import ArticleDetail from "./ArticleDetail";
+import ArticleHeader from "./ArticleHeader";
 
 export default function ListContent(props) {
 
@@ -6,7 +6,7 @@ export default function ListContent(props) {
 
   return (
     <div className="list-content">
-      <ArticleDetail title={title}/>
+      <ArticleHeader title={title}/>
       <ul className="list-keyWord">
         {
           keyWord.map((word, index) => {

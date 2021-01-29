@@ -1,8 +1,12 @@
 /* 广告位 */
 .ad {
-  margin-top: .6rem;
+  margin: .6rem 0;
+  padding-bottom: 1rem;
   text-align: center;
+  line-height: 1.5rem;
   font-size: .4rem;
+  background-color: #ffffff;
+  border-radius: .3rem;
 }
 
 .ad div {

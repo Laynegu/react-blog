@@ -1,6 +1,6 @@
 import { TagsOutlined, FireOutlined, CalendarOutlined } from '@ant-design/icons';
 
-export default function ArticleDetail({title}) {
+export default function ArticleHeader({title}) {
 
   return (
     <>

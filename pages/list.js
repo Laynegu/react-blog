@@ -10,7 +10,10 @@ export default function List() {
     <>
       <Title titleName={"List"} />
       <Header />
-      <Main BreadNav={<BreadNav />} List={<BlogList />}/>
+      <Main
+        BreadNav={<BreadNav />}
+        List={<BlogList />}
+      />
       <Footer />
     </>
   )

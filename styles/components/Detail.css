@@ -1,42 +1,56 @@
 /* 博客文章详情部分 */
+/* 文章头部 */
 .detailed-title {
   font-size: .3rem;
   text-align: center;
   padding: .5rem;
 }
 
+/* 文章内容 */
 .detailed-content {
-  padding: 1.3rem;
+  padding: 0 1.3rem;
   text-align: center;
-  font-size: .8rem;
+  font-size: .3rem;
 }
 
 code {
   display: block ;
-   background-color:#f3f3f3;
-   padding: .5rem !important;
-   overflow-y: auto;
-   font-weight: 300;
-   font-family: Menlo, monospace;
-   border-radius: .3rem;
+  background-color:#f3f3f3;
+  padding: .5rem !important;
+  overflow-y: auto;
+  font-weight: 300;
+  font-family: Menlo, monospace;
+  border-radius: .3rem;
+}
+
+/* 文章侧边导航 */
+.detailed-nav {
+  overflow: auto;
+  background-color: #ffffff;
+  border-radius: .3rem;
+}
+
+.article-nav-title {
+  padding: .2rem 0;
+  text-align: center;
+  color: #888;
+  font-size: .4rem;
+  border-bottom: .02rem solid rgb(30, 144, 255);
 }
 
 .title-anchor {
-  color:#888 !important;
-  padding:4px !important;
+  overflow: hidden;
+  color: #888 !important;
+  padding: .3rem !important;
   margin: 0rem !important;
   height: auto !important;
-  line-height: 1.2rem !important;
-  font-size: .9rem !important;
-  border-bottom: 1px dashed #eee;
+  line-height: .3rem !important;
+  font-size: .3rem !important;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .active {
+  background-color: #ffffff !important;
   color:rgb(30, 144, 255) !important;
-}
-
-.nav-title {
-  text-align: center;
-  color: #888;
-  border-bottom: 1px solid rgb(30, 144, 255);
 }

@@ -1,18 +1,14 @@
 /* 博客首页主体 */
 .main-left {
-  background-color: #FFF;
+  background-color: #ffffff;
   padding:.3rem;
   border-radius: .3rem;
-  border-bottom:1px solid #eee;
+  border-bottom: .02rem solid #eeeeee;
 }
 
 .main-right {
   height: 100%;
-  background-color: #FFF;
   margin-left: .5rem;
-  border-radius: .3rem;
-  border-bottom:1px solid #eee;
-  /* padding-bottom: .8rem; */
 }
 
 .main {

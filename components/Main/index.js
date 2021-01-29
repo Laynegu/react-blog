@@ -1,10 +1,10 @@
-import { Row, Col, Divider } from 'antd';
+import { Row, Col } from 'antd';
 import Advert from '../Advert';
 import Author from '../Author';
 
 export default function Main(props) {
 
-  const { BreadNav, List, Article } = props;
+  const { BreadNav, List, Article, ArticleNav } = props;
 
   return (
     <main>
@@ -12,12 +12,12 @@ export default function Main(props) {
         <Col className='main-left' xs={24} sm={24} md={16} lg={18} xl={10} >
           {BreadNav ? BreadNav : ''}
           {List ? List : ''}
-          {Article? Article : ''}
+          {Article ? Article : ''}
         </Col>
         <Col className='main-right' xs={0} sm={0} md={7} lg={5} xl={4} >
           <Author />
-          <Divider />
           <Advert />
+          {ArticleNav ? ArticleNav : ''}
         </Col>
       </Row>
     </main>
