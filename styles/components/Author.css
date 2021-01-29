@@ -8,7 +8,7 @@
   margin-bottom: 1.2rem;
   border-top-left-radius: .3rem;
   border-top-right-radius: .3rem;
-  background: url('https://linbudu.top/assets/img/thomas-tixtaaz-119883-unsplash.jpg') no-repeat center;
+  background: url('/img/author/author_banner.png') no-repeat center;
   background-size: cover;
 }
 
@@ -51,6 +51,7 @@
   background-color: #999999;
   margin: .2rem .4rem 0;
   cursor: pointer;
+  transition: all .6s;
 }
 
 .account:hover {

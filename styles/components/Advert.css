@@ -1,0 +1,12 @@
+/* 广告位 */
+.ad {
+  margin-top: .6rem;
+  text-align: center;
+  font-size: .4rem;
+}
+
+.ad div {
+  border-radius: .3rem;
+  margin-bottom: .2rem;
+  overflow: hidden;
+}

@@ -5,5 +5,6 @@ import '../styles/components/Header.css'
 import '../styles/components/Main.css'
 import '../styles/components/List.css'
 import '../styles/components/Author.css'
+import '../styles/components/Advert.css'
 
 export default App
