@@ -1,0 +1,18 @@
+.footer {
+  width: 100%;
+  margin-top: .5rem;
+  padding: .6rem;
+  background-color: rgba(0, 0, 0, .8);
+  text-align: center;
+  font-size: .3rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer span {
+  cursor: pointer;
+}
+
+.footer span:hover {
+  color: #1e90ff;
+}

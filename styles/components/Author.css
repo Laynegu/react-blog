@@ -37,13 +37,15 @@
   padding: .2rem 0;
 }
 
-.author-info-introduction .contact div {
+.author-info-introduction .contact .location,
+.author-info-introduction .contact .email {
   padding: .1rem;
   color: #666666;
   cursor: pointer;
 }
 
-.author-info-introduction .contact div:hover {
+.author-info-introduction .contact .location:hover,
+.author-info-introduction .contact .email:hover {
   color:  #1e90ff;
 }
 

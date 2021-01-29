@@ -6,5 +6,6 @@ import '../styles/components/Main.css'
 import '../styles/components/List.css'
 import '../styles/components/Author.css'
 import '../styles/components/Advert.css'
+import '../styles/components/Footer.css'
 
 export default App
