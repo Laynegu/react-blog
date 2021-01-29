@@ -1,0 +1,58 @@
+/* 博主联系部分 */
+.author-info{
+  text-align: center;
+}
+
+.author-info-header {
+  height: 3rem;
+  margin-bottom: 1.2rem;
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+  background: url('https://linbudu.top/assets/img/thomas-tixtaaz-119883-unsplash.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.author-info-avatar {
+  margin-top: 1.7rem;
+}
+
+.author-info-introduction {
+  padding: .2rem;
+  text-align: center;
+  font-size: .3rem;
+}
+
+.author-info-introduction .name {
+  font-size: .6rem;
+  font-weight: 600;
+  color: #222222;
+}
+
+.author-info-introduction .saying {
+  padding: .2rem .5rem;
+  color: #949292;
+}
+
+.author-info-introduction .contact {
+  padding: .2rem 0;
+}
+
+.author-info-introduction .contact div {
+  padding: .1rem;
+  color: #666666;
+  cursor: pointer;
+}
+
+.author-info-introduction .contact div:hover {
+  color:  #1e90ff;
+}
+
+.account {
+  background-color: #999999;
+  margin: .2rem .4rem 0;
+  cursor: pointer;
+}
+
+.account:hover {
+  background-color: #1e90ff;
+}

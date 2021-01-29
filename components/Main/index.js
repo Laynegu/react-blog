@@ -1,5 +1,6 @@
 import { Row, Col } from 'antd';
-import List from '../List'
+import Author from '../Author';
+import List from '../List';
 
 export default function Main() {
 
@@ -9,8 +10,8 @@ export default function Main() {
         <Col className='main-left' xs={24} sm={24} md={16} lg={18} xl={10} >
           <List></List>
         </Col>
-        <Col className='main-right' xs={0} sm={0} md={7} lg={5} xl={4} >
-          右侧
+        <Col className='main-right' xs={0} sm={0} md={7} lg={5} xl={5} >
+          <Author></Author>
         </Col>
       </Row>
     </main>
