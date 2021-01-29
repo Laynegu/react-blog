@@ -1,13 +1,17 @@
 import Title from '../components/Title';
 import Header from '../components/Header';
 import Main from '../components/Main';
+import Footer from '../components/Footer';
+import BreadNav from '../components/BreadNav';
+import Article from '../components/Article';
 
-export default function Home() {
+export default function Detail() {
   return (
-    <div>
+    <>
       <Title titleName={"Detail"} />
       <Header />
-      <Main></Main>
-    </div>
+      <Main BreadNav={<BreadNav />} Article={<Article />}/>
+      <Footer />
+    </>
   )
 }

@@ -1,4 +1,4 @@
-/* 博主联系部分 */
+/* 博主介绍部分 */
 .author-info{
   text-align: center;
 }
@@ -14,6 +14,11 @@
 
 .author-info-avatar {
   margin-top: 1.7rem;
+  transition: all .4s;
+}
+
+.author-info-avatar:hover {
+  transform: rotate(360deg);
 }
 
 .author-info-introduction {
@@ -51,7 +56,7 @@
 
 .account {
   background-color: #999999;
-  margin: .2rem .4rem 0;
+  margin: .2rem .3rem 0;
   cursor: pointer;
   transition: all .6s;
 }
