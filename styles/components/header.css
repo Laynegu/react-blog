@@ -4,8 +4,10 @@
   left: 0;
   top: 0;
   width: 100%;
+  height: 1rem;
+  padding-top: .15rem;
   box-shadow: 0 0 .3rem .02rem rgba(0, 0, 0, .4);
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, .8);
   z-index: 1;
 }
 
@@ -15,9 +17,8 @@
   font-weight: 500;
   border-bottom: none;
   background: none;
-  /* height: .8rem; */
-  /* line-height: .8rem; */
   color: #ffffff;
+  line-height: .7rem;
 }
 
 .header-icon {

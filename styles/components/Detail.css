@@ -50,6 +50,10 @@ code {
   text-overflow: ellipsis;
 }
 
+.title-anchor:hover {
+  background-color: #f1f1f1 !important;
+}
+
 .active {
   background-color: #ffffff !important;
   color:rgb(30, 144, 255) !important;

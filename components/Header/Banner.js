@@ -6,7 +6,7 @@ export default function Banner() {
         <div className='header-banner-info-title'>LF-GのBlog</div>
         <div className='header-banner-info-subtitle'>
           Don't talk it, &nbsp; just show me the code
-          </div>
+        </div>
       </div>
     </div>
   )
