@@ -1,60 +1,80 @@
 /* 博客文章详情部分 */
 /* 文章头部 */
-.detailed-title {
+.detailed-header {
   font-size: .3rem;
   text-align: center;
   padding: .5rem;
 }
 
-/* 文章内容 */
-.detailed-content {
-  padding: 0 1.3rem;
-  text-align: center;
-  font-size: .3rem;
+.detailed-header .detailed-title {
+  font-size: .55rem;
+  font-weight: 600;
 }
 
-code {
-  display: block ;
-  background-color:#f3f3f3;
-  padding: .5rem !important;
+/* 文章内容 */
+.detailed-content {
+  padding: 0 .5rem;
+  font-size: .3rem;
+  line-height: .6rem;
+}
+
+.detailed-content img {
+  width: 100%;
+  border: 1px solid #f3f3f3;
+}
+
+pre {
+  display: block;
+  background-color: #f3f3f3;
+  padding: .4rem !important;
   overflow-y: auto;
   font-weight: 300;
   font-family: Menlo, monospace;
+  line-height: .45rem;
   border-radius: .3rem;
+  background-color: #283646 !important;
+}
+
+pre > code {
+  border: 0 !important;
+  background-color: #283646 !important;
+  color: #ffffff;
+}
+
+code {
+  display: inline-block ;
+  background-color:#f3f3f3;
+  border: .02rem solid #fdb9cc;
+  border-radius: .06rem;
+  font-size: .28rem;
+  padding-left: .1rem;
+  padding-right: .1rem;
+  color: #4f4f4f;
+  margin: 0 .06rem;
 }
 
 /* 文章侧边导航 */
 .detailed-nav {
+  margin-top: .3rem;
+  padding: 0 .45rem;
   overflow: auto;
   background-color: #ffffff;
-  border-radius: .3rem;
+  border-radius: .15rem;
 }
 
 .article-nav-title {
-  padding: .2rem 0;
+  padding: .2rem 0 .1rem;
   text-align: center;
-  color: #888;
-  font-size: .4rem;
-  border-bottom: .02rem solid rgb(30, 144, 255);
+  color: #555555;
+  font-size: .35rem;
+  border-bottom: .04rem solid rgb(30, 144, 255);
 }
 
-.title-anchor {
-  overflow: hidden;
-  color: #888 !important;
-  padding: .3rem !important;
-  margin: 0rem !important;
-  height: auto !important;
-  line-height: .3rem !important;
-  font-size: .3rem !important;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.toc-list {
+  margin: .2rem 0;
 }
 
-.title-anchor:hover {
-  background-color: #f1f1f1 !important;
-}
-
-.active {
-  background-color: #ffffff !important;
-  color:rgb(30, 144, 255) !important;
+.ant-anchor-link-title {
+  font-size: .26rem;
+  color: #888888;
 }

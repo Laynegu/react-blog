@@ -3,28 +3,14 @@ import { List } from 'antd';
 import ListContent from './ListContent';
 
 
-export default function ListTable() {
+export default function ListTable({data}) {
 
-  const data = [];
-
-  for (let i = 0; i < 23; i++) {
-    data.push({
-      href: 'https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png',
-      title: `ant design part ${i}`,
-      keyWord: [{content: '#js', color: '#ffffff', bgColor: '#f52988c5'},
-      {content: '#js', color: '#ffffff', bgColor: '#f52988c5'},
-      {content: '#js', color: '#ffffff', bgColor: '#f52988c5'}],
-      description:
-        'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-    });
-  }
-
-  const [listData, setListData] = useState(data);
+  const [list, setList] = useState(data);
 
   return (
     <List
-      header={<div>最新日志</div>}
-      loading={listData.length ? false : true}
+      header={<div className="home-title">最新日志</div>}
+      loading={list ? false : true}
       itemLayout="vertical"
       size="small"
       pagination={{
@@ -33,7 +19,7 @@ export default function ListTable() {
         },
         pageSize: 5,
       }}
-      dataSource={listData}
+      dataSource={list}
       renderItem={item => (
         <List.Item>
           <ListContent {...item}/>

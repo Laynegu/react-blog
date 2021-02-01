@@ -1,36 +1,29 @@
 /* 列表内容部分 */
+.home-title {
+  padding-left: .85rem;
+  font-size: .3rem;
+}
+
 .list-title {
-  font-size: .6rem;
-  color: #1e90ff;
+  font-size: .5rem;
   padding: 0 .5rem;
 }
 
 .list-description {
   font-size: .3rem;
   color: #777;
+  line-height: .6rem;
   padding: .3rem .5rem .5rem;
 }
 
-.list-keyWord {
-  overflow: hidden;
-  padding-left: .4rem;
-  margin-top: .1rem;
-}
-
-.list-keyWord li {
-  float: left;
-  padding: .01rem .2rem;
-  margin: .1rem;
-}
-
 .list-icon {
-  padding: .1rem .1rem;
+  padding: .1rem .55rem .1rem .1rem;
   color :#AAA;
 }
 
 .list-icon span {
   display: inline-block;
-  padding: 0 .2rem;
+  padding: 0 .05rem 0 .25rem;
 }
 
 .list-icon .calendar {
@@ -53,4 +46,17 @@
 .list-img img {
   width: 100%;
   height: auto;
+}
+
+.list-footer {
+  padding: .2rem .45rem 0 0;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.list-footer .look-alltext {
+  margin: 0 .1rem;
 }

@@ -15,14 +15,10 @@ export default function Nav() {
           <EditOutlined className='header-icon' />技术杂谈
         </Menu.Item>
         <SubMenu title={<span><BookOutlined className='header-icon' />学习总结</span>}>
-          <ItemGroup title="分组1">
-            <Menu.Item key="setting:1">选项1</Menu.Item>
-            <Menu.Item key="setting:2">选项2</Menu.Item>
-          </ItemGroup>
-          <ItemGroup title="分组2">
-            <Menu.Item key="setting:3">选项3</Menu.Item>
-            <Menu.Item key="setting:4">选项4</Menu.Item>
-          </ItemGroup>
+            <Menu.Item key="frontend">前端</Menu.Item>
+            <Menu.Item key="backend">后端</Menu.Item>
+            <Menu.Item key="datastructure">数据结构和算法</Menu.Item>
+            <Menu.Item key="computer">计算机基础</Menu.Item>
         </SubMenu>
         <Menu.Item key="about">
           <LinkOutlined className='header-icon' />关于

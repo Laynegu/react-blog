@@ -1,14 +1,21 @@
 import { TagsOutlined, FireOutlined, CalendarOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
-export default function ArticleHeader({title}) {
+export default function ArticleHeader({ id, title, publicTime, typeName, viewCount }) {
 
   return (
     <>
-      <div className="list-title">{title}</div>
+      <div className="list-title">
+        <Link href={{ pathname: '/detail', query: { id } }}>
+          <a>
+            {title}
+          </a>
+        </Link>
+      </div>
       <div className="list-icon">
-        <span><CalendarOutlined className="calendar" /> 时间日期</span>
-        <span><TagsOutlined className="tags" /> 标签分类</span>
-        <span><FireOutlined className="fire" /> 阅读人数</span>
+        <span><CalendarOutlined className="calendar" /> {publicTime}</span>
+        <span><TagsOutlined className="tags" /> {typeName}</span>
+        <span><FireOutlined className="fire" /> {viewCount}</span>
       </div>
     </>
   )

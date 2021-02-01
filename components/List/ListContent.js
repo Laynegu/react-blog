@@ -1,27 +1,29 @@
 import ArticleHeader from "./ArticleHeader";
+import { FileOutlined, RightOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 
 export default function ListContent(props) {
 
-  const { title, href, description, keyWord } = props;
+  const { id, title, href, introduction, publicTime, typeName, viewCount } = props;
 
   return (
     <div className="list-content">
-      <ArticleHeader title={title}/>
-      <ul className="list-keyWord">
-        {
-          keyWord.map((word, index) => {
-            return (<li key={index} style={{ color: word.color, borderColor: word.color, backgroundColor: word.bgColor }}>
-                      {word.content}
-                    </li>)
-          })          
-        }
-      </ul>
-      <div className="list-description">{description}</div>
+      <ArticleHeader id={id} title={title} publicTime={publicTime} typeName={typeName} viewCount={viewCount} />
+      <div className="list-description">{introduction}</div>
       {href ? (
         <div className="list-img">
           <img src={href} />
         </div>
       ) : ''}
+      <div className="list-footer">
+        <Link href={{ pathname: '/detail', query: { id } }}>
+          <a>
+            <FileOutlined />
+            <span className="look-alltext">查看全文</span>
+            <RightOutlined />
+          </a>
+        </Link>
+      </div>
     </div>
   )
 }

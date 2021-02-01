@@ -5,53 +5,60 @@ import Footer from '../components/Footer';
 import BreadNav from '../components/BreadNav';
 import Article from '../components/Article';
 import ArticleNav from '../components/Article/ArticleNav';
+import axios from 'axios';
 
-let markdown = '# P01:课程介绍和环境搭建\n' +
-  '[ **M** ] arkdown + E [ **ditor** ] = **Mditor**  \n' +
-  '> Mditor 是一个简洁、易于集成、方便扩展、期望舒服的编写 markdown 的编辑器，仅此而已... \n\n' +
-  '**这是加粗的文字**\n\n' +
-  '*这是倾斜的文字*`\n\n' +
-  '***这是斜体加粗的文字***\n\n' +
-  '~~这是加删除线的文字~~ \n\n' +
-  '\`console.log(111)\` \n\n' +
-  '# p02:来个Hello World 初始Vue3.0\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n' +
-  '***\n\n\n' +
-  '# p03:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n' +
-  '# p04:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n' +
-  '#5 p05:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n' +
-  '# p06:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n' +
-  '# p07:Vue3.0基础知识讲解\n' +
-  '> aaaaaaaaa\n' +
-  '>> bbbbbbbbb\n' +
-  '>>> cccccccccc\n\n' +
-  '``` var a=11; ```'
+import marked from 'marked';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/monokai-sublime.css';
+import Tocify from '../public/lib/tocify.tsx';
 
-export default function Detail() {
+const renderer = new marked.Renderer();
+const tocify = new Tocify();
+
+// 设置文章导航
+renderer.heading = function (text, level, raw) {
+  const anchor = tocify.add(text, level);
+  return `<a id="${anchor}" href="#${anchor}" class="anchor-fix"><h${level}>${text}</h${level}></a>\n`;
+};
+
+// 设置markdown语法的渲染配置
+marked.setOptions({
+  renderer: renderer,
+  gfm: true,
+  pedantic: false,
+  sanitize: false,
+  tables: true,
+  breaks: false,
+  smartLists: true,
+  smartypants: false,
+  highlight: (code) => hljs.highlightAuto(code).value
+});
+
+export default function Detail({data}) {
+
   return (
     <>
       <Title titleName={"Detail"} />
       <Header />
       <Main
         BreadNav={<BreadNav />}
-        Article={<Article />}
-        ArticleNav={<ArticleNav markdown={markdown} />}
+        ArticleNav={<ArticleNav tocify={tocify}/>}
+        Article={<Article article={data[0]} marked={marked}/>}
       />
       <Footer />
     </>
   )
+}
+
+// 获取博客详情页文章数据
+Detail.getInitialProps = async(ctx) => {
+  // ctx: 路由跳转的上下文
+  try {
+    let id = ctx.query.id;
+    const ret = await axios.get(`http://localhost:7001/default/getArticleById/${id}`);
+    return ret.data;
+  } catch (error) {
+    console.log(error);
+    return {};
+  }
 }
