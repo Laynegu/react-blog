@@ -2,7 +2,7 @@ import { TagsOutlined, FireOutlined, CalendarOutlined } from '@ant-design/icons'
 
 export default function Article({ article, marked }) {
 
-  const { title, publicTime, typeName, viewCount, articleContent } = article;
+  const { title, publicTime, tabName, viewCount, articleContent } = article;
   const html = marked(articleContent);
 
   return (
@@ -13,7 +13,7 @@ export default function Article({ article, marked }) {
         </div>
         <div className="list-icon">
           <span><CalendarOutlined className="calendar" /> {publicTime}</span>
-          <span><TagsOutlined className="tags" /> {typeName}</span>
+          <span><TagsOutlined className="tags" /> {tabName}</span>
           <span><FireOutlined className="fire" /> {viewCount}</span>
         </div>
       </div>

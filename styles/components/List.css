@@ -1,11 +1,12 @@
 /* 列表内容部分 */
 .home-title {
-  padding-left: .85rem;
+  padding-left: .55rem;
   font-size: .3rem;
+  font-weight: 600;
 }
 
 .list-title {
-  font-size: .5rem;
+  font-size: .4rem;
   padding: 0 .5rem;
 }
 
@@ -17,8 +18,9 @@
 }
 
 .list-icon {
-  padding: .1rem .55rem .1rem .1rem;
+  padding: .1rem .55rem .1rem 0;
   color :#AAA;
+  font-size: .28rem;
 }
 
 .list-icon span {
@@ -55,6 +57,7 @@
   text-align: center;
   justify-content: flex-end;
   align-items: center;
+  font-size: .28rem;
 }
 
 .list-footer .look-alltext {

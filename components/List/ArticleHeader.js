@@ -1,8 +1,7 @@
 import { TagsOutlined, FireOutlined, CalendarOutlined } from '@ant-design/icons';
 import Link from 'next/link';
 
-export default function ArticleHeader({ id, title, publicTime, typeName, viewCount }) {
-
+export default function ArticleHeader({ id, title, publicTime, tabName, viewCount }) {
   return (
     <>
       <div className="list-title">
@@ -14,7 +13,7 @@ export default function ArticleHeader({ id, title, publicTime, typeName, viewCou
       </div>
       <div className="list-icon">
         <span><CalendarOutlined className="calendar" /> {publicTime}</span>
-        <span><TagsOutlined className="tags" /> {typeName}</span>
+        <span><TagsOutlined className="tags" /> {tabName}</span>
         <span><FireOutlined className="fire" /> {viewCount}</span>
       </div>
     </>

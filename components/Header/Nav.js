@@ -1,29 +1,52 @@
-import { Menu } from 'antd';
-import { HomeOutlined, EditOutlined, BookOutlined, LinkOutlined, BarsOutlined } from '@ant-design/icons';
+import { useState, useEffect } from 'react';
+import { Row, Col, Menu, Icon } from 'antd';
+import Router from 'next/router';
+import Link from 'next/link';
 
-const {SubMenu, ItemGroup} = Menu;
+export default function Nav({ navArr, typeId }) {
 
-export default function Nav() {
+  const [current, setCurrent] = useState('0');
+  useEffect(() => {
+    setCurrent(typeId + '');
+  }, []);
+
+  const handleClick = e => {
+    setCurrent(e.key);
+    // 跳转列表页
+    e.key === '0' ? Router.push('/') : Router.push(`/list?id=${e.key}`);
+  };
 
   return (
     <nav className='header-nav'>
-      <Menu mode="horizontal" overflowedIndicator={<BarsOutlined className='header-icon' />}>
-        <Menu.Item key="home">
-          <HomeOutlined className='header-icon' />首页
-        </Menu.Item>
-        <Menu.Item key="skill">
-          <EditOutlined className='header-icon' />技术杂谈
-        </Menu.Item>
-        <SubMenu title={<span><BookOutlined className='header-icon' />学习总结</span>}>
-            <Menu.Item key="frontend">前端</Menu.Item>
-            <Menu.Item key="backend">后端</Menu.Item>
-            <Menu.Item key="datastructure">数据结构和算法</Menu.Item>
-            <Menu.Item key="computer">计算机基础</Menu.Item>
-        </SubMenu>
-        <Menu.Item key="about">
-          <LinkOutlined className='header-icon' />关于
-        </Menu.Item>
-      </Menu>
+      <Row type="flex" justify="center">
+        <Col xs={14} sm={14} md={14} lg={14} xl={8}>
+          <Link href="/">
+            <a><span className="header-logo">gulinfei</span></a>
+          </Link>
+        </Col>
+        <Col className="memu-div" xs={6} sm={6} md={6} lg={6} xl={10}>
+          <Menu
+            onClick={handleClick}
+            selectedKeys={[current]}
+            mode="horizontal"
+            overflowedIndicator={<Icon type="unordered-list" className='header-icon'/>}
+          >
+            <Menu.Item key="0" >
+              <Icon type="home" className='header-icon'/>首页
+            </Menu.Item>
+            {
+              navArr.map(item => {
+                const { type_name, id, icon_type } = item;
+                return (
+                  <Menu.Item key={id} >
+                    <Icon type={icon_type} className='header-icon'/>{type_name}
+                  </Menu.Item>
+                )
+              })
+            }
+          </Menu>
+        </Col>
+      </Row>
     </nav>
   )
 }

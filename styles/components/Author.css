@@ -18,11 +18,6 @@
 
 .author-info-avatar {
   margin-top: 1.7rem;
-  transition: all .4s;
-}
-
-.author-info-avatar:hover {
-  transform: rotate(360deg);
 }
 
 .author-info-introduction {

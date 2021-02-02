@@ -1,6 +1,8 @@
 /* 面包屑导航栏部分 */
 .bread-nav {
   padding: .2rem;
+  padding-left: .6rem;
+  margin-bottom: .4rem;
   background-color: rgba(35, 134, 226, 0.219);
   font-weight: 600;
   border-radius: .1rem;

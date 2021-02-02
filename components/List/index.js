@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { List } from 'antd';
 import ListContent from './ListContent';
 
 
-export default function ListTable({data}) {
+export default function ListTable({ data, isHome }) {
 
-  const [list, setList] = useState(data);
+  const [isLoading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+    return () => {
+      setLoading(true);
+    }
+  });
 
   return (
     <List
-      header={<div className="home-title">最新日志</div>}
-      loading={list ? false : true}
+      header={isHome ? <div className="home-title">最新日志</div> : ''}
+      loading={ isLoading }
       itemLayout="vertical"
       size="small"
       pagination={{
@@ -19,10 +25,10 @@ export default function ListTable({data}) {
         },
         pageSize: 5,
       }}
-      dataSource={list}
+      dataSource={data}
       renderItem={item => (
         <List.Item>
-          <ListContent {...item}/>
+          <ListContent {...item} />
         </List.Item>
       )}
     />

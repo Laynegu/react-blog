@@ -4,17 +4,12 @@ import Link from 'next/link';
 
 export default function ListContent(props) {
 
-  const { id, title, href, introduction, publicTime, typeName, viewCount } = props;
+  const { id, introduction } = props;
 
   return (
     <div className="list-content">
-      <ArticleHeader id={id} title={title} publicTime={publicTime} typeName={typeName} viewCount={viewCount} />
+      <ArticleHeader {...props} />
       <div className="list-description">{introduction}</div>
-      {href ? (
-        <div className="list-img">
-          <img src={href} />
-        </div>
-      ) : ''}
       <div className="list-footer">
         <Link href={{ pathname: '/detail', query: { id } }}>
           <a>

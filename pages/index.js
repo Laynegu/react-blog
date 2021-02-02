@@ -5,12 +5,14 @@ import Footer from '../components/Footer';
 import List from '../components/List';
 import axios from 'axios';
 
+import servicePath from '../config/apiUrl';
+
 export default function Home({data}) {
   return (
     <>
       <Title titleName={"Home"} />
-      <Header />
-      <Main List={<List data={data} />} />
+      <Header typeId="0"/>
+      <Main List={<List data={data} isHome={true}/>} />
       <Footer />
     </>
   )
@@ -19,7 +21,7 @@ export default function Home({data}) {
 // 获取博客首页列表数据
 Home.getInitialProps = async () => {
   try {
-    const ret = await axios.get("http://localhost:7001/default/getArticleList");
+    const ret = await axios.get(servicePath.getArticleList);
     return ret.data;
   } catch (error) {
     console.log(error);
