@@ -37,7 +37,6 @@ List.getInitialProps = async (ctx) => {
   try {
     let id = ctx.query.id;
     const ret = await axios.get(servicePath.getListById + id);
-    console.log(ret);
     return ret.data;
   } catch (error) {
     console.log(error);

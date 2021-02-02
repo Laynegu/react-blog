@@ -5,19 +5,26 @@ import Link from 'next/link';
 
 export default function Nav({ navArr, typeId }) {
 
-  const [current, setCurrent] = useState('0');
+  const [state, setState] = useState({current: '0', bgColor: '#ffffff'});
   useEffect(() => {
-    setCurrent(typeId + '');
+    setState({current: typeId + ''});
+    window.addEventListener('scroll', () => {
+      if (window.scrollY === 0) {
+        setState({current: typeId + '', bgColor: 'rgba(255,255,255,0.6)'});
+      } else {
+        setState({current: typeId + '', bgColor: '#ffffff'});
+      }
+    });
   }, []);
 
   const handleClick = e => {
-    setCurrent(e.key);
+    setState({current: e.key});
     // 跳转列表页
     e.key === '0' ? Router.push('/') : Router.push(`/list?id=${e.key}`);
   };
 
   return (
-    <nav className='header-nav'>
+    <nav className='header-nav' style={{backgroundColor: state.bgColor}}>
       <Row type="flex" justify="center">
         <Col xs={14} sm={14} md={14} lg={14} xl={8}>
           <Link href="/">
@@ -27,19 +34,19 @@ export default function Nav({ navArr, typeId }) {
         <Col className="memu-div" xs={6} sm={6} md={6} lg={6} xl={10}>
           <Menu
             onClick={handleClick}
-            selectedKeys={[current]}
+            selectedKeys={[state.current]}
             mode="horizontal"
-            overflowedIndicator={<Icon type="unordered-list" className='header-icon'/>}
+            overflowedIndicator={<Icon type="unordered-list" className='header-icon' />}
           >
             <Menu.Item key="0" >
-              <Icon type="home" className='header-icon'/>首页
+              <Icon type="home" className='header-icon' />首页
             </Menu.Item>
             {
               navArr.map(item => {
                 const { type_name, id, icon_type } = item;
                 return (
                   <Menu.Item key={id} >
-                    <Icon type={icon_type} className='header-icon'/>{type_name}
+                    <Icon type={icon_type} className='header-icon' />{type_name}
                   </Menu.Item>
                 )
               })
