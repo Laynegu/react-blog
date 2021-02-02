@@ -23,8 +23,8 @@ export default function List({ data }) {
       <Title titleName={"List"} />
       <Header typeId={typeId} />
       <Main
-        BreadNav={<BreadNav typeId={typeId} typeName={typeName}/>}
-        List={<BlogList data={list} isHome={false}/>}
+        BreadNav={<BreadNav typeId={typeId} typeName={typeName} />}
+        List={<BlogList data={list} isHome={false} />}
       />
       <Footer />
     </>

@@ -8,20 +8,12 @@ import ArticleNav from '../components/Article/ArticleNav';
 import servicePath from '../config/apiUrl';
 
 import axios from 'axios';
-import { Spin } from 'antd';
-import { useState, useEffect } from 'react';
-
 import marked from 'marked';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/monokai-sublime.css';
 import Tocify from '../public/lib/tocify.tsx';
 
 export default function Detail({ data }) {
-
-  const [isLoading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(false)
-  }, [data]);
 
   const renderer = new marked.Renderer();
   const tocify = new Tocify();
@@ -50,13 +42,11 @@ export default function Detail({ data }) {
     <>
       <Title titleName={"Detail"} />
       <Header typeId={typeId} />
-      <Spin spinning={isLoading}>
       <Main
         BreadNav={<BreadNav title={title} typeName={typeName} typeId={typeId} />}
         ArticleNav={<ArticleNav tocify={tocify} />}
         Article={<Article article={data[0]} marked={marked} />}
       />
-      </Spin>
       <Footer />
     </>
   )
