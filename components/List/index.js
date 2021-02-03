@@ -16,7 +16,7 @@ export default function ListTable({ data, isHome }) {
   return (
     <List
       header={isHome ? <div className="home-title">最新日志</div> : ''}
-      loading={ isLoading }
+      loading={isLoading}
       itemLayout="vertical"
       size="small"
       pagination={{
