@@ -8,6 +8,7 @@ export default function Header({ typeId }) {
 
   const [navArr, setNavArr] = useState([]);
 
+  // 发送axios请求获得导航栏类别数据
   useEffect(() => {
     const getNavData = async () => {
       const ret = await axios.get(servicePath.getTypeInfo);
